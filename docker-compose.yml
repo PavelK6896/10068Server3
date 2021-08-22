@@ -1,0 +1,57 @@
+version: '3.9'
+
+volumes:
+  server3-back1:
+
+services:
+
+  10068Back4JS:
+    image: 'js10068back4'
+    container_name: 10068Back4JS
+    build:
+      context: 10068Back4JS
+      dockerfile: Dockerfile
+    environment:
+      - PORT=3000
+    ports:
+      - "8080:3000"
+
+  10068Back3Java:
+    image: 'java10068back3'
+    container_name: 10068Back3Java
+    build:
+      context: 10068Back3Java
+      dockerfile: Dockerfile
+    environment:
+      - PORT=8080
+    ports:
+      - "8080:8080"
+
+
+  10068Back2JavaSpring:
+    image: 'java10068back2'
+    container_name: 10068Back2JavaSpring
+    build:
+      context: 10068Back2JavaSpring
+      dockerfile: Dockerfile
+    environment:
+      - PORT=8080
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./:/app
+
+
+  10068Back1JavaSpring:
+    image: 'java10068back1'
+    container_name: 10068Back1JavaSpring
+    build:
+      context: 10068Back1JavaSpring
+      dockerfile: Dockerfile
+    environment:
+      - PORT=8080
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./:/app
+
