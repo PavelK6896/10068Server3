@@ -5,6 +5,18 @@ volumes:
 
 services:
 
+  10069Back5JavaSpark:
+    image: 'server3.back5:1'
+    container_name: 10069Back5JavaSpark
+    build:
+      context: 10069Back5JavaSpark
+      dockerfile: Dockerfile
+    environment:
+      - PORT=8080
+    ports:
+      - "8080:8080"
+
+
   10068Back4JS:
     image: 'js10068back4'
     container_name: 10068Back4JS
