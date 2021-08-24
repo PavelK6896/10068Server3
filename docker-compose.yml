@@ -5,6 +5,17 @@ volumes:
 
 services:
 
+  10070Back6JavaMicronaut:
+    image: 'server3.back6:1'
+    container_name: 10070Back6JavaMicronaut
+    build:
+      context: 10070Back6JavaMicronaut
+      dockerfile: Dockerfile
+    environment:
+      - PORT=8080
+    ports:
+      - "8080:8080"
+
   10069Back5JavaSpark:
     image: 'server3.back5:1'
     container_name: 10069Back5JavaSpark
@@ -15,7 +26,6 @@ services:
       - PORT=8080
     ports:
       - "8080:8080"
-
 
   10068Back4JS:
     image: 'js10068back4'

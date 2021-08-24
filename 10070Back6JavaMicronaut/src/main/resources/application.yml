@@ -1,0 +1,5 @@
+micronaut:
+  application:
+    name: back6
+  server:
+    port: 8080
